@@ -21,6 +21,14 @@
     }
 }
 
+.centered {
+    @include mq(large) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;    
+    }
+}
+
 [class^=col] {
     margin-top: 10px;
     flex-basis: 100%;
@@ -38,101 +46,117 @@
     }
 }
 
-.theme.col-1 {
-    background-color: #927bc1;
-}
-
-.theme.col-2 {
-    background-color: #fd7856;
-}
-
-.theme.col-3 {
-    background-color: #deb2ee;
-}
-
-.theme.col-4 {
-    background-color: #7ee6fd;
-}
-
-.theme.col-5 {
-    background-color: #88d9a0;
-}
-
-.theme.col-6 {
-    background-color: #4da2bb;
-}
-
-.theme.col-7 {
-    background-color: #ec9fa3;
+.col-1 {
     @include mq(large) {
-        .centered {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-          }
+        flex-basis: 8.33%
+    }
+    &.theme {
+        background-color: $col-1;
     }
 }
 
-.theme.col-8 {
-    background-color: #fd9f85;
+.col-2 {
+    @include mq(large) {
+        flex-basis: 16.67%
+    }
+    &.theme {
+        background-color: $col-2;
+    }
 }
 
-.theme.col-9 {
-    background-color: #e4757a;
+.col-3 {
+    @include mq(large) {
+        flex-basis: 25.00%
+    }
+    &.theme {
+        background-color: $col-3;
+    }
 }
 
-.theme.col-10 {
-    background-color: #63cc82;
+.col-4 {
+    @include mq(large) {
+        flex-basis: 33.33%
+    }
+    &.theme {
+        background-color: $col-4;
+    }
 }
 
-.theme.col-11 {
-    background-color: #51ddfc;
+.col-5 {
+    @include mq(large) {
+        flex-basis: 41.67%
+    }
+    &.theme {
+       background-color: $col-5;
+    }
 }
 
-.theme.col-12 {
-    background-color: #80e8d1;
+.col-6 {
+    @include mq(large) {
+        flex-basis: 50.00%
+    }
+    &.theme {
+        background-color: $col-6;
+    }
+}
+
+.col-7 {
+    @include mq(large) {
+        flex-basis: 58.33%
+    }
+    &.theme {
+        background-color: $col-7;
+    }
+}
+
+.col-8 {
+    @include mq(large) {
+        flex-basis: 66.67%
+    }
+    &.theme {
+        background-color: $col-8;
+    }
+}
+
+.col-9 {
+    @include mq(large) {
+        flex-basis: 75.00%
+    }
+    &.theme {
+        background-color: $col-9;
+    }
+}
+
+.col-10 {
+    @include mq(large) {
+        flex-basis: 83.33%
+    }
+    &.theme {
+        background-color: $col-10;
+    }
+}
+
+.col-11 {
+    @include mq(large) {
+        flex-basis: 91.67%
+    }
+    &.theme {
+        background-color: $col-11;
+    }
+}
+
+.col-12 {
+    @include mq(large) {
+        flex-basis: 100%
+    }
+    &.theme {
+        background-color: $col-12;
+    }
 }
 
 .card {
     flex-basis: 100%;
 }
 
-//=============================================
-//               Grid columns                  
-//=============================================
 
 
-//Calculate the columns
-
-@include mq(large) {
-    @for $i from 1 through $g-col-count {
-
-        $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
-        $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
-
-        //Generate column modifier classes
-        .grid__col--#{$i} {
-            width: percentage($target / $context);
-        }   
-    }
-}
-
-// Column styles
-
-[class^="grid__col--"] {
-    @media (min-width: 1px) and (max-width: $brk-l) {
-        margin-top: em(12px);
-        margin-bottom: em(12px);
-    }
-
-    @include mq(large) {
-        @include doubly(percentage($g-gutter-width / $context));
-        float: left;
-        min-height: 1px;
-        padding-left: 10px;
-        padding-right: 10px;
-        &:last-of-type {
-            float: right;
-        }
-    }
-}
