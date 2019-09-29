@@ -1,0 +1,68 @@
+//=============================================
+//                Base type                    
+//=============================================
+
+* {
+    font-family: 'Lato', sans-serif;
+    color: $primary;
+    box-sizing: border-box;
+}
+
+p {
+    line-height: 1.45em;
+}
+
+a {
+    text-decoration: none;
+}
+
+//=============================================
+//                Type                    
+//=============================================
+
+.headline-primary {
+    color: $accent;
+    margin-left: 10px;
+}
+
+.headline-secondary {
+    font-weight: 300;
+    color: $primary;
+}
+
+.link {
+    color: $default;
+    font-weight: 700;
+}
+
+.blockquote {
+    font-size: 1.5em;
+    font-weight: 300;
+    font-style: italic;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 8px solid $accent;
+    border-radius: 5px;
+}
+
+//=============================================
+//                Navigation                    
+//=============================================
+
+.nav-link {
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: $white;
+}
+
+//=============================================
+//                Buttons                    
+//=============================================
+
+.btn {
+    color: $white;
+    text-transform: uppercase;
+}
+

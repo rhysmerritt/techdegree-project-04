@@ -1,0 +1,8 @@
+// Adjacent siblings margins
+
+@mixin doubly($margin: 1em) {
+    & + & {
+        margin-left: $margin;
+        @content;
+    }
+}

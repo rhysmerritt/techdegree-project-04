@@ -1,0 +1,113 @@
+//=============================================
+//                Grid setup                   
+//=============================================
+
+.container {
+    padding: 0 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 10px;
+}
+
+[class^=col] {
+    margin-top: 10px;
+    flex-basis: 100%;
+    min-height: 25px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.theme.col-1 {
+    background-color: #927bc1;
+}
+
+.theme.col-2 {
+    background-color: #fd7856;
+}
+
+.theme.col-3 {
+    background-color: #deb2ee;
+}
+
+.theme.col-4 {
+    background-color: #7ee6fd;
+}
+
+.theme.col-5 {
+    background-color: #88d9a0;
+}
+
+.theme.col-6 {
+    background-color: #4da2bb;
+}
+
+.theme.col-7 {
+    background-color: #ec9fa3;
+}
+
+.theme.col-8 {
+    background-color: #fd9f85;
+}
+
+.theme.col-9 {
+    background-color: #e4757a;
+}
+
+.theme.col-10 {
+    background-color: #63cc82;
+}
+
+.theme.col-11 {
+    background-color: #51ddfc;
+}
+
+.theme.col-12 {
+    background-color: #80e8d1;
+}
+
+.card {
+    flex-basis: 100%;
+}
+
+//=============================================
+//               Grid columns                  
+//=============================================
+
+
+//Calculate the columns
+
+@media (min-width: 769px) {
+    @for $i from 1 through $g-col-count {
+
+        $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
+        $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+        //Generate column modifier classes
+        .grid__col--#{$i} {
+            width: percentage($target / $context);
+        }   
+    }
+}
+
+// Column styles
+
+[class^="grid__col--"] {
+    @media (min-width: 1px) and (max-width: 768px) {
+        margin-top: em(12px);
+        margin-bottom: em(12px);
+    }
+
+    @media (min-width: 769px) {
+        @include doubly(percentage($g-gutter-width / $context));
+        float: left;
+        min-height: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+        &:last-of-type {
+            float: right;
+        }
+    }
+}
