@@ -3,10 +3,15 @@
 //=============================================
 
 $default: #51ddfc;
+$default-light: lighten($default, 15%);
 $error: #e4757a;
+$error-light: lighten($error, 15%);
 $info: #927bc1;
+$info-light: lighten($info, 15%);
 $success: #63cc82;
+$success-light: lighten($success, 15%);
 $warning: #fd7856;
+$warning-light: lighten($warning, 15%);
 
 //=============================================
 //              Base colours                 

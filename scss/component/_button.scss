@@ -15,23 +15,43 @@
       }
     }
   }
-  
-  .default {
-    background-color: $default;
+
+.default {
+  background-color: $default;
+  &:hover {
+    background-color: $default-light;
+    transition: background-color .1s ease-in-out;
+    }
+}
+
+.error {
+  background-color: $error;
+  &:hover {
+    background-color: $error-light;
+    transition: background-color .1s ease-in-out;
   }
-  
-  .error {
-    background-color: $error;
+}
+
+.info {
+  background-color: $info;
+  &:hover {
+    background-color: $info-light;
+    transition: background-color .1s ease-in-out;
   }
-  
-  .info {
-    background-color: $info;
+}
+
+.success {
+  background-color: $success;
+  &:hover {
+    background-color: $success-light;
+    transition: background-color .1s ease-in-out;
   }
-  
-  .success {
-    background-color: $success;
+}
+
+.warning {
+  background-color: $warning;
+  &:hover {
+    background-color: $warning-light;
+    transition: background-color .1s ease-in-out;
   }
-  
-  .warning {
-    background-color: $warning;
-  }
+}
