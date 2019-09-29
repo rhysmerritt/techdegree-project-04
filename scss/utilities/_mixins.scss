@@ -6,3 +6,16 @@
         @content;
     }
 }
+
+// Media queries
+
+@mixin mq($break) {
+    @if $break == "large" {
+        @media (min-width: $brk-l){
+            @content;
+        }
+    }
+    @else {
+        @error "No value retrieved for '#{$break}'."
+    }
+}

@@ -4,12 +4,21 @@
 
 .container {
     padding: 0 10px;
+    @include mq(large) {
+        max-width: 1400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .row {
     display: flex;
     flex-direction: column;
     padding: 1em 10px;
+    @include mq(large) {
+        flex-direction: row;
+    }
 }
 
 [class^=col] {
@@ -18,6 +27,15 @@
     min-height: 25px;
     padding: 10px;
     border-radius: 5px;
+    @include mq(large) {
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+        align-items: center;
+        & + & {
+            margin-left: 10px;
+        }
+    }
 }
 
 .theme.col-1 {
@@ -46,6 +64,13 @@
 
 .theme.col-7 {
     background-color: #ec9fa3;
+    @include mq(large) {
+        .centered {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+    }
 }
 
 .theme.col-8 {
@@ -79,7 +104,7 @@
 
 //Calculate the columns
 
-@media (min-width: 769px) {
+@include mq(large) {
     @for $i from 1 through $g-col-count {
 
         $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
@@ -95,12 +120,12 @@
 // Column styles
 
 [class^="grid__col--"] {
-    @media (min-width: 1px) and (max-width: 768px) {
+    @media (min-width: 1px) and (max-width: $brk-l) {
         margin-top: em(12px);
         margin-bottom: em(12px);
     }
 
-    @media (min-width: 769px) {
+    @include mq(large) {
         @include doubly(percentage($g-gutter-width / $context));
         float: left;
         min-height: 1px;

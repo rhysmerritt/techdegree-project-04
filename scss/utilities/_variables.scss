@@ -20,8 +20,7 @@ $white: #fff;
 //          Media query breakpoints                
 //=============================================
 
-$brk-l: '(min-width: 768px)';
-
+$brk-l: 769px;
 
 //=============================================
 //                  Grid                       
@@ -31,3 +30,9 @@ $g-col-width: 65px;
 $g-gutter-width: 20px;
 $g-col-count: 12;
 $g-cont-max-w: 1050px;
+
+//=============================================
+//                  Font stack                 
+//=============================================
+
+$stack-sans-serif: 'Lato', sans-serif;

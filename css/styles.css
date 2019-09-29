@@ -1,6 +1,10 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -340,7 +344,6 @@ template {
 * {
   font-family: "Lato", sans-serif;
   color: #777;
-  box-sizing: border-box;
 }
 
 p {
@@ -396,6 +399,14 @@ a {
   padding: 10px 0;
   border-radius: 5px;
 }
+@media (min-width: 769px) {
+  .btn {
+    padding: 10px 30px;
+  }
+  .btn + .btn {
+    margin-left: 10px;
+  }
+}
 
 .default {
   background-color: #51ddfc;
@@ -442,11 +453,24 @@ a {
 .container {
   padding: 0 10px;
 }
+@media (min-width: 769px) {
+  .container {
+    max-width: 1400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .row {
   display: flex;
   flex-direction: column;
   padding: 1em 10px;
+}
+@media (min-width: 769px) {
+  .row {
+    flex-direction: row;
+  }
 }
 
 [class^=col] {
@@ -455,6 +479,17 @@ a {
   min-height: 25px;
   padding: 10px;
   border-radius: 5px;
+}
+@media (min-width: 769px) {
+  [class^=col] {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    align-items: center;
+  }
+  [class^=col] + [class^=col] {
+    margin-left: 10px;
+  }
 }
 
 .theme.col-1 {
@@ -483,6 +518,13 @@ a {
 
 .theme.col-7 {
   background-color: #ec9fa3;
+}
+@media (min-width: 769px) {
+  .theme.col-7 .centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .theme.col-8 {
@@ -558,7 +600,7 @@ a {
     width: 100%;
   }
 }
-@media (min-width: 1px) and (max-width: 768px) {
+@media (min-width: 1px) and (max-width: 769px) {
   [class^=grid__col--] {
     margin-top: em(12px);
     margin-bottom: em(12px);
@@ -585,6 +627,13 @@ a {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 769px) {
+  .nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
 
 .nav-link {
   border-radius: 5px;
@@ -593,11 +642,22 @@ a {
   width: 100%;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
+@media (min-width: 769px) {
+  .nav-link {
+    flex-basis: 100px;
+  }
+}
 
 .nav-link:hover {
   background-color: #58e1c1;
 }
 
+@media (min-width: 769px) {
+  .logo {
+    margin-left: initial;
+    margin-right: initial;
+  }
+}
 .img-avatar {
   display: block;
   margin-left: auto;
