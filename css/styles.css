@@ -625,7 +625,6 @@ a {
     align-items: center;
   }
 }
-
 .nav-link {
   border-radius: 5px;
   padding: 10px 0;
@@ -638,7 +637,6 @@ a {
     flex-basis: 100px;
   }
 }
-
 .nav-link:hover {
   background-color: #58e1c1;
 }
